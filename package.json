@@ -1,0 +1,23 @@
+{
+  "name": "last-release-github",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jimdo/last-release-github.git"
+  },
+  "author": "Jimdo GmbH",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jimdo/last-release-github/issues"
+  },
+  "homepage": "https://github.com/Jimdo/last-release-github#readme",
+  "dependencies": {
+    "github4": "^1.1.0",
+    "parse-github-repo-url": "^1.3.0"
+  }
+}
