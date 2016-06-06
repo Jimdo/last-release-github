@@ -21,9 +21,21 @@ module.exports = function getLatestRelease(pluginConfig, config, callback) {
             return callback(err);
         }
 
-        callback(null, {
-          version: latestRelease.tag_name,
-          gitHead: latestRelease.target_commitish,
-        });
+        return github.gitdata.getReference(
+            {
+                ref: `tags/${latestRelease.tag_name}`,
+                user: githubRepo[0],
+                repo: githubRepo[1],
+            },
+            (refErr, ref) => {
+                if (refErr) {
+                    return callback(refErr);
+                }
+
+                return callback(null, {
+                    version: latestRelease.tag_name,
+                    gitHead: ref.object.sha,
+                });
+            });
     });
 };
